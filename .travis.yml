@@ -4,8 +4,6 @@ node_js:
 services: 
   - mongodb
 script:
-  - npm run test
-before_script:
   - npm install
-script:
-  - node app
+before_script:
+  - npm run test

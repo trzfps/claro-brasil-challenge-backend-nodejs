@@ -38,22 +38,9 @@ describe('/DELETE devices', () => {
         chai.request(app)
             .delete('/device/1')
             .end((err, res) => {
-                res.should.have.status(200)
+                res.should.have.status(400)
                 done()
             })
             
     })
 } )
-
-//describe('/UPDATE devices', () => {
-  //  it('it should a update a device', (done) => {
-    //    chai.request(app)
-      //  .put('/device/1')
-       // .send("nameDevice=teste")
-       // .end((err, res) => {
-         //   res.should.have.arguments()
-          //  res.should.have.status(200)
-          //  done()
-        //})
-    //})
-//  })

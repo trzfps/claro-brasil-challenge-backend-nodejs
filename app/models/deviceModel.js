@@ -24,11 +24,10 @@ const DevicesSchema = new mongoose.Schema({
         default: Date.now
 
     },
-    exchangeable: {
-        type: Boolean,
-        default: true
+    updatedAt: {
+        type: Date,
     }
-});
+}, { strict: false });
 
 
 const Devices = mongoose.model('Devices', DevicesSchema)
