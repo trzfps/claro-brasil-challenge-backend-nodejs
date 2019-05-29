@@ -85,6 +85,18 @@ class DeviceController {
         }
         return res.status(400).send({error:'device is not found'})
     }
+
+    async getDevices(req, res){
+        let id = req.params.id;
+        let userDevices = await Device.find({"idUser": id})
+        if(userDevices.length > 0){
+            return res.status(200).send(userDevices)
+        }
+        return res.status(400).send(` user ${id} don't have devices`)
+
+    }
+
+
 }
 
 module.exports = new DeviceController
